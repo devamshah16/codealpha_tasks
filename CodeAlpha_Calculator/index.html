@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator | Task-2</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <h1>Calculator</h1>
+    <p class="subtitle">Basic arithmetic with keyboard support</p>
+  </header>
+
+  <main class="calculator-wrapper">
+    <div class="calculator" role="application" aria-label="Calculator">
+      <div class="display" aria-live="polite" aria-atomic="true">
+        <div class="display-expression" id="expression" aria-hidden="true"></div>
+        <div class="display-current" id="display">0</div>
+      </div>
+
+      <div class="keypad">
+        <button class="btn btn-fn" data-action="clear" aria-label="All clear">AC</button>
+        <button class="btn btn-fn" data-action="backspace" aria-label="Backspace">⌫</button>
+        <button class="btn btn-fn" data-action="toggle-sign" aria-label="Toggle sign">±</button>
+        <button class="btn btn-op" data-action="operator" data-value="÷" aria-label="Divide">÷</button>
+
+        <button class="btn btn-num" data-action="digit" data-value="7">7</button>
+        <button class="btn btn-num" data-action="digit" data-value="8">8</button>
+        <button class="btn btn-num" data-action="digit" data-value="9">9</button>
+        <button class="btn btn-op" data-action="operator" data-value="×" aria-label="Multiply">×</button>
+
+        <button class="btn btn-num" data-action="digit" data-value="4">4</button>
+        <button class="btn btn-num" data-action="digit" data-value="5">5</button>
+        <button class="btn btn-num" data-action="digit" data-value="6">6</button>
+        <button class="btn btn-op" data-action="operator" data-value="−" aria-label="Subtract">−</button>
+
+        <button class="btn btn-num" data-action="digit" data-value="1">1</button>
+        <button class="btn btn-num" data-action="digit" data-value="2">2</button>
+        <button class="btn btn-num" data-action="digit" data-value="3">3</button>
+        <button class="btn btn-op" data-action="operator" data-value="+" aria-label="Add">+</button>
+
+        <button class="btn btn-num btn-zero" data-action="digit" data-value="0">0</button>
+        <button class="btn btn-num" data-action="decimal" aria-label="Decimal point">.</button>
+        <button class="btn btn-equals" data-action="equals" aria-label="Equals">=</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Task-2 &mdash; Calculator with real-time preview &amp; keyboard shortcuts</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
