@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player | Task-4</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient-orb ambient-orb--1"></div>
+    <div class="ambient-orb ambient-orb--2"></div>
+    <div class="ambient-orb ambient-orb--3"></div>
+  </div>
+
+  <header class="header">
+    <h1>Music Player</h1>
+    <p class="subtitle">Play, pause, and browse your playlist</p>
+  </header>
+
+  <main class="player-wrapper">
+    <div class="player" role="region" aria-label="Music player">
+      <div class="now-playing">
+        <div class="album-art-wrap">
+          <div class="album-art-glow" id="albumArtGlow"></div>
+          <div class="album-art" id="albumArt" aria-hidden="true">
+            <div class="album-art-inner">
+              <span class="album-art-icon">♪</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="track-info">
+          <h2 class="track-title" id="trackTitle">—</h2>
+          <p class="track-artist" id="trackArtist">—</p>
+        </div>
+      </div>
+
+      <div class="progress-section">
+        <div class="time-row">
+          <span class="time" id="currentTime">0:00</span>
+          <span class="time" id="duration">0:00</span>
+        </div>
+        <input
+          type="range"
+          class="progress-bar"
+          id="progressBar"
+          min="0"
+          max="100"
+          value="0"
+          step="0.1"
+          aria-label="Seek track"
+        >
+      </div>
+
+      <div class="controls">
+        <button class="control-btn" id="prevBtn" aria-label="Previous track">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h2v12H6V6zm3.5 6 8.5 6V6l-8.5 6z"/></svg>
+        </button>
+        <button class="control-btn control-btn--primary play-pause-btn" id="playPauseBtn" type="button" aria-label="Play" aria-pressed="false">
+          <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7L8 5z"/></svg>
+          <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+        <button class="control-btn" id="nextBtn" aria-label="Next track">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18l8.5-6L6 6v12zm10-12v12h2V6h-2z"/></svg>
+        </button>
+      </div>
+
+      <div class="volume-section">
+        <button class="mute-btn" id="muteBtn" type="button" aria-label="Mute" aria-pressed="false">
+          <svg class="icon-speaker" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+          </svg>
+          <svg class="icon-speaker-off" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4 9.91 6.09 12 8.18V4z"/>
+          </svg>
+        </button>
+        <input
+          type="range"
+          class="volume-bar"
+          id="volumeBar"
+          min="0"
+          max="100"
+          value="80"
+          aria-label="Volume"
+        >
+        <span class="volume-value" id="volumeValue">80%</span>
+      </div>
+
+      <div class="player-options">
+        <label class="toggle">
+          <input type="checkbox" id="autoplayToggle">
+          <span class="toggle-slider"></span>
+          <span class="toggle-label">Autoplay</span>
+        </label>
+      </div>
+    </div>
+
+    <aside class="playlist-panel" aria-label="Playlist">
+      <div class="playlist-header">
+        <h3>Playlist</h3>
+        <span class="playlist-count" id="playlistCount">0 tracks</span>
+      </div>
+      <ul class="playlist" id="playlist"></ul>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <p>Task-4 &mdash; Music player with playlist, progress bar &amp; volume control</p>
+  </footer>
+
+  <audio id="audio" preload="metadata"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
