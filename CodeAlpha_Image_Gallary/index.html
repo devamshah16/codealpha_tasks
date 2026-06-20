@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery | Task-1</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <h1>Image Gallery</h1>
+    <p class="subtitle">Browse, filter, and explore in full-screen lightbox</p>
+  </header>
+
+  <nav class="filters" aria-label="Image categories">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="nature">Nature</button>
+    <button class="filter-btn" data-filter="architecture">Architecture</button>
+    <button class="filter-btn" data-filter="travel">Travel</button>
+    <button class="filter-btn" data-filter="abstract">Abstract</button>
+  </nav>
+
+  <main class="gallery-container">
+    <div class="gallery" id="gallery">
+      <!-- Gallery items injected by JS for maintainability -->
+    </div>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">&#10095;</button>
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightboxImage" class="lightbox-image">
+      <div class="lightbox-caption">
+        <span class="lightbox-category" id="lightboxCategory"></span>
+        <p class="lightbox-title" id="lightboxTitle"></p>
+        <span class="lightbox-counter" id="lightboxCounter"></span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Task-1 &mdash; Responsive image gallery with filters &amp; lightbox</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
